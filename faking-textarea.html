@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Type anything slowly</h2>
+<textarea id="text" cols="40" rows="10" onkeydown="typeText();"></textarea>
+<script>
+    var sentense = ['','Đ','ạ','t',' ','l','à',' ','đ','ẹ','p',' ','t','r','a','i',' ','n','h','ấ','t','!','!','!'];
+    var text = '';
+    function typeText() {
+        areaText = document.getElementById('text').value;
+        lengthText = areaText.length;
+        if (lengthText > 0)
+        {
+            for (var i=0;i<=lengthText;i++)
+            {
+                text =text + sentense[i];
+                if (i === 24){
+                document.getElementById('text').value = '';
+                text ='';
+                }
+            }
+        }
+        document.getElementById('text').value = text;
+        text = '';
+        setTimeout("typeText()",0);
+    }
+</script>
+</body>
+</html>
